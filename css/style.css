@@ -199,7 +199,7 @@ a:hover{
         right: -100%; /* Para ele sair da tela */
         top: 0;
         z-index: 10;
-        transition: right .7s ease-in-out;
+        transition: right .5s ease-in-out;
     }
 
     .header .nav ul li {
