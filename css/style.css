@@ -9,7 +9,7 @@
 }
 
 body{
-    font-family: 'Open-Sans', sans-serif: inherit;
+    font-family: 'Open Sans', sans-serif; font-size: inherit;
 }
 
 /* CAMPOS INPUT 
@@ -43,22 +43,37 @@ a:hover{
 
 /* CLASSES  */ 
 
-/* SECTION  1  
---------------------------------*/
 
-.header{
-    display: none;
-    width: 100%;
-    
-}
-
-
-/* SECTION  2
+/* GERAIS  2
 --------------------------------*/
 .section{
     float: left;
     width: 100%;
 }
+
+.content{
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/* SECTION   
+--------------------------------*/
+
+.header{
+    position: fixed;
+    width: 100%;
+    padding-top: 30px;
+    z-index: 6;
+}
+
+.header .logo img{
+    max-width: 150px;
+}
+
+
+
 
 
 /* 
@@ -138,8 +153,8 @@ a:hover{
 
     border-radius: 10px;
     -webkit-border-radius: 10px;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
 .estatisticas span{
@@ -153,10 +168,46 @@ a:hover{
 
 
 
-/* BREAKCPOINTS MÁXIMOS 
+/* BREAKCPOINTS MÁXIMOS  - MOBIBLE
 ---------------------------------------------- */
 
 @media (max-width: 767.9px){
+
+    /* MENU MOBIBLE */ 
+
+    .nav-toggle{
+        color: white;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-close{
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .header .nav.active{
+        right: 0;
+    }
+
+    .header .nav{
+        background: #fff;
+        width: 250px;
+        height: 100%;
+        position: fixed;
+        padding: 15px;
+        right: -100%; /* Para ele sair da tela */
+        top: 0;
+        z-index: 10;
+        transition: right .7s ease-in-out;
+    }
+
+    .header .nav ul li {
+        padding: 15px 5px;
+        font-size: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    
     .estatisticas{
         flex-direction: column;
     }
@@ -174,12 +225,33 @@ a:hover{
 }
 
 
-/* BREAKCPOINTS MINÍMOS 
+/* BREAKCPOINTS MINÍMOS - DESKTOP
 ---------------------------------------------- */
 
 @media (min-width: 768px){ /* Quando passar de 768px */ 
-
+  
     /* search */
+    .nav-toggle, .nav-close{
+        display: none;
+    }
+
+    .header .nav{
+        float: right;
+        margin: 20px;
+    }
+
+    .header .nav ul li{
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .header .nav ul li a{
+        color: #fff;
+    }
+
+    .header .nav ul li a:hover{
+        color: #f9014d;
+    }
 
     .search-box {
         padding: 200px 0;
@@ -201,4 +273,28 @@ a:hover{
     .estatisticas-item:not(:last-of-type){
         border-right: 1px solid #ccc;
     }
+}
+
+
+/* AUXILIARES  
+--------------------------------*/
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+     text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.fl-left{
+    float: left;
+}
+
+.fl-right{
+    float: right;
 }
